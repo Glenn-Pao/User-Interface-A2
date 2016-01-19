@@ -18,4 +18,8 @@ public class AdjustVol : MonoBehaviour {
     {
         AudioListener.volume = volume;
     }
+    public void SetSFXVol(float volume)
+   {
+       AudioListener.volume = volume;
+   }
 }
