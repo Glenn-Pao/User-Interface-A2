@@ -9,6 +9,7 @@ public class Transitions : MonoBehaviour {
     //trigger this when the button is tapped while on splashscreen
     public void LoadMainMenu()
     {
+        Debug.Log("Main Menu Screen Load");
         Application.LoadLevel("Main_Menu_Screen"); //move to the main menu screen
     }
 
@@ -21,6 +22,7 @@ public class Transitions : MonoBehaviour {
     //trigger this when the Menu button is tapped on while in main menu screen
     public void LoadOptionsScreen()
     {
+        Debug.Log("Option Screen Load");
         Application.LoadLevel("Options_Screen");
     }
 

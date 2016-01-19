@@ -6,9 +6,9 @@ using UnityEngine.Audio;    //access the audio mixer namespaces
 public class Audio_BGM : MonoBehaviour {
 
     private static Audio_BGM instance = null;
-    public static Audio_BGM Instance
+    public static Audio_BGM GetInstance()
     {
-        get { return instance; }
+        return instance;
     }
     
     public AudioMixerSnapshot outOfCombat;
@@ -19,31 +19,33 @@ public class Audio_BGM : MonoBehaviour {
     private float m_TransitionOut;  //mili seconds to transition out combat music
     private float m_QuarterNote;
 
+    SliderJoint2D volumeSlider;
+
 	// Use this for initialization
 	void Start () {
 	    m_QuarterNote = 60/bpm;
         m_TransitionIn = m_QuarterNote;
         m_TransitionOut = m_QuarterNote * 32;
 	}
-
+    
     void Awake()
     {
-        if(instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
+       //check if there isnt an instance yet
+        if(instance == null)
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
 
-        GameObject go = GameObject.Find("AudioSource");
-        //go.audio = NewMusic;
-
+        //if there is already an instance
+        else if(instance != this)
+        {
+            //destroy this pattern. ensure that it only plays once.
+            Destroy(gameObject);
+        }
+        //Set it not to be destroyed when reloading a scene
+        DontDestroyOnLoad(gameObject);
     }
-
+    /************** Triggers, if needed *****************/
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("CombatZone"))
