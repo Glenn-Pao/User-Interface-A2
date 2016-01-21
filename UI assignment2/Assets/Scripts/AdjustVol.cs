@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using System.Collections;
 
 public class AdjustVol : MonoBehaviour {
-
-    SliderJoint2D volumeSlider;
+    static float soundvalue;
+    Slider volumeSlider;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
+        soundvalue = AudioListener.volume;
+        volumeSlider.value = soundvalue;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
+        soundvalue = volumeSlider.value;
+    
 	}
 
    public void SetBGMVol(float volume)

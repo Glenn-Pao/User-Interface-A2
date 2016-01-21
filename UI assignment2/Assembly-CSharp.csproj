@@ -48,8 +48,11 @@
      <Compile Include="Assets\Scripts\AdjustVol.cs" />
      <Compile Include="Assets\Scripts\Audio_BGM.cs" />
      <Compile Include="Assets\Scripts\InputContoller.cs" />
-     <Compile Include="Assets\Scripts\Splash_Transition.cs" />
+     <Compile Include="Assets\Scripts\MainMenu_Screen.cs" />
+     <Compile Include="Assets\Scripts\Options_Screen.cs" />
+     <Compile Include="Assets\Scripts\Splash_Screen.cs" />
      <Compile Include="Assets\Scripts\Transitions.cs" />
+     <Compile Include="Assets\Scripts\swap.cs" />
      <Compile Include="Assets\Scripts\toggle3.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

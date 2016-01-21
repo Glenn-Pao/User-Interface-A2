@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class Transitions : MonoBehaviour {
-
-
     /*******  These are the functions to call when you want to transition from screen to screen  ********/
 
     //trigger this when the button is tapped while on splashscreen
@@ -25,14 +23,4 @@ public class Transitions : MonoBehaviour {
         Debug.Log("Option Screen Load");
         Application.LoadLevel("Options_Screen");
     }
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
